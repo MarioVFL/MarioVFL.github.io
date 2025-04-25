@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desde nosso primeiro beijo...</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #c71585;
+      font-size: 2.5em;
+    }
+    #tempo {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    .texto {
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-style: italic;
+      font-size: 1.2em;
+      line-height: 1.6;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #c71585;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desde nosso primeiro beijo...</h1>
+  <div id="tempo"></div>
+
+  <div class="texto">
+    <p>
+      Quando a vida fica difícil, não se tem nem mais como saborear a comida. Mas aí você come algo com a pessoa que alivia sua ansiedade e por algum motivo tudo fica mais gostoso.
+    </p>
+    <p>
+      Eu poderia falar que foi por acaso mas prefiro dizer que nosso encontro possuía a evidência do prometido, encontrando seu caminho pela doce clareza de um vínculo tecido sem alarde, e guiado pela elegância do destino para unir as almas que devem se encontrar.
+    </p>
+    <p>
+      Eu poderia falar que você é linda mas prefiro dizer que o nascer do sol, o azul do mar, as estrelas na noite, a brisa no verão, tudo não passa de acessórios para vestir a verdadeira, única e absoluta beleza, você.
+    </p>
+  </div>
+
+  <audio id="musica" src="https://mariovfl.github.io/musica.mp3"></audio>
+  <button onclick="document.getElementById('musica').play()">Aperte para aceitar...</button>
+
+  <script>
+    const inicioNamoro = new Date("2025-04-08T09:04:00");
+    function atualizarTempo() {
+      const agora = new Date();
+      const diff = agora - inicioNamoro;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("tempo").textContent =
+        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    setInterval(atualizarTempo, 1000);
+    atualizarTempo();
+  </script>
+</body>
+</html>
